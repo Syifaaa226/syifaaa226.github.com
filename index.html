@@ -3,50 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kim Young Kwang - Sakura Theme</title>
+  <title>Latar Belakang Sakura Pixel</title>
   <style>
     body {
       margin: 0;
       height: 100vh;
-      background-image: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb'); /* gambar bunga sakura */
-      background-size: cover;
-      background-position: center;
+      background-color: #ffe6f2;
+      background-image:
+        radial-gradient(circle, #ffb6c1 20%, transparent 21%),
+        radial-gradient(circle, #ffcce0 20%, transparent 21%),
+        radial-gradient(circle, #ff99cc 20%, transparent 21%),
+        radial-gradient(circle, #ff80bf 20%, transparent 21%);
+      background-position:
+        0 0, 25px 25px,
+        50px 50px, 75px 75px;
+      background-size: 100px 100px;
+      image-rendering: pixelated;
+      font-family: 'Courier New', monospace;
       display: flex;
-      align-items: center;
       justify-content: center;
-      font-family: "Poppins", sans-serif;
+      align-items: center;
     }
 
-    .card {
+    h1 {
       background: rgba(255, 255, 255, 0.8);
-      border-radius: 20px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      max-width: 300px;
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 15px;
-    }
-
-    h2 {
-      margin: 15px 0 5px;
-      font-size: 1.5em;
-      color: #d63384; /* warna pink lembut */
-    }
-
-    p {
-      color: #444;
+      padding: 20px 40px;
+      border: 3px solid #ff99cc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ffb6c1;
+      color: #d63384;
+      text-shadow: 2px 2px #ffe6f2;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Kim_Young-kwang_in_July_2019.png" alt="Kim Young Kwang">
-    <h2>Kim Young Kwang</h2>
-    <p>Aktor Korea Selatan yang dikenal melalui berbagai drama dan film romantis.</p>
-  </div>
+  <h1>🌸 Pixel Sakura Background 🌸</h1>
 </body>
 </html>
