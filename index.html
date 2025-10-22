@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Latar Belakang Sakura Pixel</title>
+  <title>Pixel Sakura Falling</title>
   <style>
     body {
       margin: 0;
@@ -19,13 +19,15 @@
         50px 50px, 75px 75px;
       background-size: 100px 100px;
       image-rendering: pixelated;
+      overflow: hidden;
       font-family: 'Courier New', monospace;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       background: rgba(255, 255, 255, 0.8);
       padding: 20px 40px;
       border: 3px solid #ff99cc;
@@ -33,10 +35,49 @@
       box-shadow: 0 0 10px #ffb6c1;
       color: #d63384;
       text-shadow: 2px 2px #ffe6f2;
+      z-index: 10;
+    }
+
+    .petal {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: #ff99cc;
+      border-radius: 2px;
+      box-shadow:
+        2px 2px #ffb6c1,
+        -2px -1px #ffcce0;
+      opacity: 0.9;
+      animation: fall linear infinite;
+      image-rendering: pixelated;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.3;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>🌸 Pixel Sakura Background 🌸</h1>
+  <h1>🌸 Pixel Sakura Falling 🌸</h1>
+
+  <script>
+    const numPetals = 40;
+    for (let i = 0; i < numPetals; i++) {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (5 + Math.random() * 5) + 's';
+      petal.style.animationDelay = Math.random() * 5 + 's';
+      petal.style.backgroundColor = ['#ff99cc', '#ffb6c1', '#ffcce0'][Math.floor(Math.random() * 3)];
+      document.body.appendChild(petal);
+    }
+  </script>
 </body>
 </html>
